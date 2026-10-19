@@ -5,6 +5,8 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
+RUN groupadd -r webservice && useradd --no-log-init -r -g webservice webservice
+
 COPY requirements.txt .
 RUN apt-get update && apt-get install -y \
     gcc \
@@ -15,12 +17,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app.py .
 
-# Expose the port Flask runs on
 EXPOSE 5005
 
-# Set a non-root user for better security
-RUN useradd -m appuser
-USER appuser
+USER webservice:webservice
 
-# Run the application using the built-in development server
 CMD ["python", "app.py"]
