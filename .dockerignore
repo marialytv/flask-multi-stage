@@ -1,0 +1,80 @@
+# =========================================================================
+# 1. Version Control & Repository Metadata (Noisy Stuff)
+# =========================================================================
+.git
+.gitignore
+.gitattributes
+.github
+.gitlab
+
+# =========================================================================
+# 2. Sensitive Information & Local Configuration (Secret Stuff)
+# =========================================================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.secret
+id_rsa
+secrets.dev.yaml
+
+# =========================================================================
+# 3. Development Dependencies & Virtual Envs (Heavy Stuff)
+# =========================================================================
+node_modules/
+bower_components/
+.venv/
+venv/
+env/
+lib/
+lib64/
+.pytest_cache/
+.tox/
+
+# =========================================================================
+# 4. Build Outputs, Artifacts & Cache
+# =========================================================================
+dist/
+build/
+out/
+target/
+*.egg-info/
+.pnpm-store/
+.npm/
+.yarn/
+.cache/
+
+# =========================================================================
+# 5. IDE, Editors & OS Overhead Files
+# =========================================================================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+.DS_Store
+Thumbs.db
+
+# =========================================================================
+# 6. Logs and Runtime Data
+# =========================================================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.logs/
+*.sql
+*.sqlite3
+*.db
+
+# =========================================================================
+# 7. Docker Overhead (Preventing recursive context bundling)
+# =========================================================================
+Dockerfile
+Dockerfile.*
+.dockerignore
+docker-compose*.yml
